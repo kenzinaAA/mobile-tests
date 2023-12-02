@@ -15,7 +15,7 @@ public class BrowserstackDriver implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-        MutableCapabilities caps = new MutableCapabilities();
+        MutableCapabilities caps = new MutableCapabilities(); // todo move to UiAutomator2Options
 
         // Set your access credentials
         caps.setCapability("browserstack.user", "qaguru_ti9G5S");
