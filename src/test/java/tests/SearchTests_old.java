@@ -1,6 +1,7 @@
 package tests;
 
 import io.appium.java_client.AppiumBy;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,6 +16,7 @@ import java.util.List;
 
 public class SearchTests_old {
 
+    @Disabled
     @Test
     void successfulSearchTest() throws MalformedURLException, InterruptedException {
 
@@ -32,7 +34,7 @@ public class SearchTests_old {
         caps.setCapability("os_version", "9.0");
 
         // Set other BrowserStack capabilities
-        caps.setCapability("project", "First Java Project");
+        caps.setCapability("project", "First Java Config");
         caps.setCapability("build", "browserstack-build-1");
         caps.setCapability("name", "first_test");
 
