@@ -19,15 +19,12 @@ public interface ProjectConfig extends Config {
     @Key("password")
     String password();
 
-    @Key("android.deviceModel")
+    @Key("os")
+    String os();
+
+    @Key("deviceModel")
     String deviceModel();
 
-    @Key("android.osVersion")
+    @Key("osVersion")
     String osVersion();
-
-    @Key("ios.deviceModel")
-    String iosDevice();
-
-    @Key("ios.osVersion")
-    String iosVersion();
 }

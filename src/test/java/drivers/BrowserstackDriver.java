@@ -8,18 +8,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static config.ConfigCreator.config;
-import static helpers.Browserstack.getBrowserstackUrl;
-import static helpers.Environment.*;
+import static helpers.BrowserstackVideoHelper.getBrowserstackUrl;
+
 
 public class BrowserstackDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
-        if (isAndroid) {
+        if (config.os().equals("android")) {
             return getAndroidDriver();
-        } else if (isIos) {
+        } else {
             return getIosDriver();
         }
-        return null;
     }
 
     private DesiredCapabilities commonCapabilities() {
@@ -31,19 +30,19 @@ public class BrowserstackDriver implements WebDriverProvider {
 
     private AndroidDriver getAndroidDriver() {
         DesiredCapabilities capabilities = commonCapabilities();
-        capabilities.setCapability("deviceName", androidDevice);
-        capabilities.setCapability("os_version", androidVersion);
-        capabilities.setCapability("app", androidBrowserstackApp);
+        capabilities.setCapability("deviceName", config.deviceModel());
+        capabilities.setCapability("os_version", config.osVersion());
+        capabilities.setCapability("app", config.appUrl());
 
         return new AndroidDriver(getBrowserstackUrl(), capabilities);
     }
 
     private IOSDriver getIosDriver() {
         DesiredCapabilities capabilities = commonCapabilities();
-        capabilities.setCapability("deviceName", iosDevice);
-        capabilities.setCapability("os_version", iosVersion);
+        capabilities.setCapability("deviceName", config.deviceModel());
+        capabilities.setCapability("os_version", config.osVersion());
         capabilities.setCapability("autoAcceptAlerts", true);
-        capabilities.setCapability("app", iosBrowserstackApp);
+        capabilities.setCapability("app", config.appUrl());
 
         return new IOSDriver(getBrowserstackUrl(), capabilities);
     }

@@ -14,21 +14,20 @@ import screens.*;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
-import static helpers.Environment.isBrowserstack;
-import static helpers.Environment.isEmulator;
 
 public class TestBase {
     public MainScreen mainScreen = new MainScreen();
     public SearchScreen searchScreen = new SearchScreen();
     public SearchResultScreen searchResultScreen = new SearchResultScreen();
-    public IosElements iosElements = new IosElements();
+    public IosTextScreen iosElements = new IosTextScreen();
     public OnboardingScreen onboardingScreen = new OnboardingScreen();
 
     @BeforeAll
     static void beforeAll() {
-        if (isBrowserstack) {
+        String deviceHost = System.getProperty("deviceHost", "emulation");
+        if (deviceHost.equals("browserstack")) {
             Configuration.browser = BrowserstackDriver.class.getName();
-        } else if (isEmulator) {
+        } else if (deviceHost.equals("emulation")) {
             Configuration.browser = LocalDriver.class.getName();
         } else {
             throw new RuntimeException("Unknown deviceHost was provided.");
@@ -47,8 +46,6 @@ public class TestBase {
     void addAttachments() {
         String sessionId = Selenide.sessionId().toString();
         System.out.println(sessionId);
-
-//        Attach.screenshotAs("Last screenshot"); // todo fix
         Attach.pageSource();
         closeWebDriver();
 
