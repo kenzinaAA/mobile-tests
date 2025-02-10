@@ -1,6 +1,6 @@
 package data;
 
-public class OnboardingTextsData {
+public class TextsData {
     public final String firstPageHeader = "The Free Encyclopedia\n…in over 300 languages";
     public final String firstPageText = "We’ve found the following on your device:";
     public final String firstPageLanguages = "1.\t\tEnglish";
@@ -15,4 +15,5 @@ public class OnboardingTextsData {
     public final String fourthPageText = "We believe that you should not have to provide personal information to " +
             "participate in the free knowledge movement. Usage data collected for this app is anonymous. " +
             "Learn more about our privacy policy and terms of use.";
+    public final String articleShortDescription = "Automation for Apps";
 }

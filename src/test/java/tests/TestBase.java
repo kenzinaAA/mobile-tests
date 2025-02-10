@@ -3,7 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import data.OnboardingTextsData;
+import data.TextsData;
 import drivers.BrowserstackDriver;
 import drivers.LocalDriver;
 import helpers.Attach;
@@ -21,7 +21,7 @@ public class TestBase {
     public SearchScreen searchScreen = new SearchScreen();
     public SearchResultScreen searchResultScreen = new SearchResultScreen();
     public OnboardingScreen onboardingScreen = new OnboardingScreen();
-    public OnboardingTextsData onboardingTextsData = new OnboardingTextsData();
+    public TextsData textsData = new TextsData();
     public ArticleScreen articleScreen = new ArticleScreen();
     public SavedScreen savedScreen = new SavedScreen();
 

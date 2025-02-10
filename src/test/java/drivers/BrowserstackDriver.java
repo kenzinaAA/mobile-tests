@@ -14,7 +14,7 @@ import static helpers.BrowserstackVideoHelper.getBrowserstackUrl;
 public class BrowserstackDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
-        if (remoteConfig.os().equals("android")) {
+        if (remoteConfig.os().equals("Android")) {
             return getAndroidDriver();
         } else {
             return getIosDriver();
