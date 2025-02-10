@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import data.OnboardingTextsData;
 import drivers.BrowserstackDriver;
 import drivers.LocalDriver;
 import helpers.Attach;
@@ -19,8 +20,10 @@ public class TestBase {
     public MainScreen mainScreen = new MainScreen();
     public SearchScreen searchScreen = new SearchScreen();
     public SearchResultScreen searchResultScreen = new SearchResultScreen();
-    public IosTextScreen iosElements = new IosTextScreen();
     public OnboardingScreen onboardingScreen = new OnboardingScreen();
+    public OnboardingTextsData onboardingTextsData = new OnboardingTextsData();
+    public ArticleScreen articleScreen = new ArticleScreen();
+    public SavedScreen savedScreen = new SavedScreen();
 
     @BeforeAll
     static void beforeAll() {

@@ -13,7 +13,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static config.LocalConfigCreator.config;
+import static config.LocalConfigCreator.localConfig;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
@@ -34,11 +34,11 @@ public class LocalDriver implements WebDriverProvider {
 
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(ANDROID)
-                .setPlatformVersion(config.osVersion())
-                .setDeviceName(config.device())
+                .setPlatformVersion(localConfig.osVersion())
+                .setDeviceName(localConfig.device())
                 .setApp(getAppPath())
-                .setAppPackage(config.appPackage())
-                .setAppActivity(config.appActivity());
+                .setAppPackage(localConfig.appPackage())
+                .setAppActivity(localConfig.appActivity());
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
