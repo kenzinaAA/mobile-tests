@@ -4,16 +4,15 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:local.properties",   // локальные настройки
-        "classpath:remote.properties",  // удалённые настройки
+        "classpath:browserstack.properties",   // локальные настройки
         "system:properties"        // можно переопределить через -D
 })
 public interface BrowserStackConfig extends Config{
 
-    @Key("browserstack.user")
+    @Key("user")
     String user();
 
-    @Key("browserstack.key")
+    @Key("key")
     String key();
 
     @Key("app")
@@ -24,4 +23,13 @@ public interface BrowserStackConfig extends Config{
 
     @Key("osVersion")
     String osVersion();
+
+    @Key("project")
+    String project();
+
+    @Key("build")
+    String build();
+
+    @Key("name")
+    String name();
 }
