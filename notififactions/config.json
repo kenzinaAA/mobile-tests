@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "KenzinaAA_Diploma_Mobile",
+    "environment": "Jenkins",
+    "comment": "API",
+    "reportLink": "https://jenkins.autotests.cloud/job/KenzinaAA_Diploma_Mobile/",
+    "language": "ru",
+    "allureFolder": "allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "8432529449:AAEzWVSXAYFaH8G9bNQ1YW-rGtzvdRz4FLA",
+    "chat": "-1003201734160",
+    "replyTo": "@QAGuru_Kenzina_Bot"
+  }
+}
