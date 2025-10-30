@@ -6,7 +6,6 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -78,10 +77,10 @@ public class WikiTests extends TestBase {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Selenium");
         });
-        step("Убедиться, что в результатах поиска нашлась статья 'Selenium (software)'", () -> {
+        step("Убедиться, что в результатах поиска нашлась статья 'Selenium (software)'", () ->
             $$(byClassName("android.widget.TextView"))
-                    .find(text("Selenium (software)")).click();
-        });
+                    .find(text("Selenium (software)")).click()
+        );
         step("Проверить переход на страницу со статьей", () ->
                 $(id("org.wikipedia.alpha:id/view_wiki_error_text")).isDisplayed());
     }
