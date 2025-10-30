@@ -78,8 +78,8 @@ public class WikiTests extends TestBase {
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Selenium");
         });
         step("Убедиться, что в результатах поиска нашлась статья 'Selenium (software)'", () ->
-            $$(byClassName("android.widget.TextView"))
-                    .find(text("Selenium (software)")).click()
+                $$(byClassName("android.widget.TextView"))
+                        .find(text("Selenium (software)")).click()
         );
         step("Проверить переход на страницу со статьей", () ->
                 $(id("org.wikipedia.alpha:id/view_wiki_error_text")).isDisplayed());
@@ -90,14 +90,15 @@ public class WikiTests extends TestBase {
     @Feature("Главная страница")
     @Test
     void Tester() {
-        String newsTitle = step("Сохранить заголовок первого новостного блока и перейти на него", () -> {
-            SelenideElement newsFirst = $$(id("org.wikipedia.alpha:id/horizontal_scroll_list_item_text"))
-                    .first();
-            newsFirst.shouldBe(visible).click();
-            return newsFirst.text();
+        String newsText = step("Сохранить заголовок первого новостного блока и перейти на него", () -> {
+            SelenideElement newsFirst = $$(id("org.wikipedia.alpha:id/horizontal_scroll_list_item_text")).first();
+            String text = newsFirst.text();
+            newsFirst.click();
+            return text;
         });
-        step("Убедиться, что заголовок '" + newsTitle + "' открывшейся страницы совпадает с заголовком новостного блока", () ->
-                $(id("org.wikipedia.alpha:id/view_news_fullscreen_story_text")).shouldHave(text(newsTitle))
+        step("Убедиться, что заголовок '" + newsText + "' открывшейся страницы совпадает с заголовком новостного блока", () -> {
+                    $(id("org.wikipedia.alpha:id/view_news_fullscreen_story_text")).shouldHave(text(newsText));
+                }
         );
     }
 }
