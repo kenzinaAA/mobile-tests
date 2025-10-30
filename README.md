@@ -1,6 +1,6 @@
 # 🚀 Дипломный проект по автоматизации mobile тестов для приложения [Wikipedia](https://ru.wikipedia.org/)
 
-![](https://github.com/kenzinaAA/mobile-tests/blob/main/images/Wikipedia-logo.png)
+[<img alt="Allure_EE" height="120" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/Wikipedia-logo.png" width="120"/>](https://qameta.io/)
 
 > Проект по автоматизации mobile тестов для приложения Wikipedia
 
@@ -34,16 +34,16 @@
 
 [<img alt="Allure" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Allure.svg" width="70"/>](https://github.com/allure-framework/allure2)
 [<img alt="Allure_EE" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Allure_EE.svg" width="70"/>](https://qameta.io/)
-[<img alt="Java" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Android.svg" width="70"/>](https://developer.android.com/studio?hl=ru)
-[<img alt="Java" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Appium.svg" width="70"/>](https://appium.io//)
-[<img alt="Java" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Browserstack.svg" width="70"/>](https://www.browserstack.com/)
+[<img alt="Android" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Android.svg" width="70"/>](https://developer.android.com/studio?hl=ru)
+[<img alt="Appium" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Appium.svg" width="70"/>](https://appium.io//)
+[<img alt="Browserstack" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Browserstack.svg" width="70"/>](https://www.browserstack.com/)
 [<img alt="Github" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/GitHub.svg" width="70"/>](https://github.com/)
 [<img alt="Gradle" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Gradle.svg" width="70"/>](https://gradle.org/)
 [<img alt="IDEA" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Idea.svg" width="70"/>](https://www.jetbrains.com/idea/)
 [<img alt="Java" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Java.svg" width="70"/>](https://www.java.com/)
 [<img alt="Jenkins" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Jenkins.svg" width="70"/>](https://www.jenkins.io/)
 [<img alt="JUnit 5" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Junit5.svg" width="70"/>](https://junit.org/junit5/)
-[<img alt="JUnit 5" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Selenide.svg" width="70"/>](https://selenide.org/)
+[<img alt="Selenide" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Selenide.svg" width="70"/>](https://selenide.org/)
 [<img alt="Telegram" height="70" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/logo/Telegram.svg" width="70"/>](https://telegram.org/)
 ---
 
