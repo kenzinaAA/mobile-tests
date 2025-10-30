@@ -1,6 +1,6 @@
 # 🚀 Дипломный проект по автоматизации mobile тестов для приложения [Wikipedia](https://ru.wikipedia.org/)
 
-[<img alt="Allure_EE" height="120" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/Wikipedia-logo.png" width="120"/>](https://qameta.io/)
+[<img alt="Wikipedia" height="250" src="https://github.com/kenzinaAA/mobile-tests/blob/main/images/Wikipedia-logo.png" width="250"/>](https://ru.wikipedia.org/)
 
 > Проект по автоматизации mobile тестов для приложения Wikipedia
 
