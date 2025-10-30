@@ -9,6 +9,9 @@ import org.aeonbits.owner.Config;
 })
 public interface BrowserStackConfig extends Config{
 
+    @Key("baseUrl")
+    String baseUrl();
+
     @Key("user")
     String user();
 

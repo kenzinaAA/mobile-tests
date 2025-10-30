@@ -19,6 +19,9 @@ public class TestBase {
         Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
+        Configuration.pageLoadTimeout = 0;
+        Configuration.screenshots = false;
+        Configuration.savePageSource = false;
     }
 
     @BeforeEach
@@ -28,13 +31,11 @@ public class TestBase {
     }
 
     @AfterEach
-    void addAttachments() throws InterruptedException {
+    void addAttachments() {
         String sessionId = Selenide.sessionId().toString();
-
-        Attach.screenshotAs("LastScreenshot");
+        //Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         closeWebDriver();
-
         Attach.addVideo(sessionId);
     }
 

@@ -14,6 +14,7 @@ def aspectjWeaverVersion = "1.9.22",
     junitVersion = "5.9.3",
     slf4jVersion = "2.0.7"
 
+
 allure {
     report {
         version.set("2.29.0")
@@ -41,6 +42,7 @@ dependencies {
     )
 }
 
+
 tasks.withType(Test) {
     useJUnitPlatform()
 
@@ -49,5 +51,11 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task android(type: Test) {
+    useJUnitPlatform {
+        includeTags 'android'
     }
 }

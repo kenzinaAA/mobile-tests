@@ -16,17 +16,17 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
-    BrowserStackConfig config = ConfigFactory.create(BrowserStackConfig.class, System.getProperties());
+    static BrowserStackConfig config = ConfigFactory.create(BrowserStackConfig.class, System.getProperties());
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
-        MutableCapabilities caps = new MutableCapabilities();
+        DesiredCapabilities  caps = new DesiredCapabilities ();
 
         caps.setCapability("browserstack.user",  config.user());
         caps.setCapability("browserstack.key", config.key());
-
-        caps.setCapability("apps", config.app());
+        caps.setCapability("app", config.app());
 
         caps.setCapability("device", config.device());
         caps.setCapability("os_version", config.osVersion());
@@ -37,7 +37,7 @@ public class BrowserstackDriver implements WebDriverProvider {
 
         try {
             return new RemoteWebDriver(
-                    new URL("http://hub.browserstack.com/wd/hub"), caps);
+                    new URL(config.baseUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
