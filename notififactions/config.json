@@ -2,7 +2,7 @@
   "base": {
     "project": "KenzinaAA_Diploma_Mobile",
     "environment": "Jenkins",
-    "comment": "API",
+    "comment": "Mobile",
     "reportLink": "https://jenkins.autotests.cloud/job/KenzinaAA_Diploma_Mobile/",
     "language": "ru",
     "allureFolder": "allure-report/",

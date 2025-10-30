@@ -3,12 +3,14 @@ package tests;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Locale;
 
 import static com.codeborne.selenide.CollectionCondition.size;
@@ -89,15 +91,21 @@ public class WikiTests extends TestBase {
     @Tag("MINOR")
     @Feature("Главная страница")
     @Test
-    void Tester() {
+    void checkNewsForTitle() {
         String newsText = step("Сохранить заголовок первого новостного блока и перейти на него", () -> {
             SelenideElement newsFirst = $$(id("org.wikipedia.alpha:id/horizontal_scroll_list_item_text")).first();
             String text = newsFirst.text();
             newsFirst.click();
             return text;
         });
-        step("Убедиться, что заголовок '" + newsText + "' открывшейся страницы совпадает с заголовком новостного блока", () -> {
-                    $(id("org.wikipedia.alpha:id/view_news_fullscreen_story_text")).shouldHave(text(newsText));
+        step("Убедиться, что заголовок '" + newsText + "' открывшейся страницы включен в заголовок новостного блока", () -> {
+            String newsTitle = $(id("org.wikipedia.alpha:id/view_news_fullscreen_story_text")).text();
+            //Делаем так, потому что Wiki вставляет слова типа (illustrated) в этот блок
+            Assertions.assertTrue(
+                    Arrays.stream(newsText.split("\\s+"))
+                            .allMatch(word -> newsTitle.contains(word)),
+                    "Не все слова из заголовка присутствуют в тексте страницы"
+            );
                 }
         );
     }
