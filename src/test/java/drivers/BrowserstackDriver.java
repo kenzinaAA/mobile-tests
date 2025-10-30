@@ -26,8 +26,8 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("browserstack.key", config.key());
         caps.setCapability("app", config.app());
 
-        System.getProperty("device").replace("_", " ");
-        caps.setCapability("device", config.device());
+        //Заменяем подчеркивания пробелами
+        caps.setCapability("device", config.device().replace("_", " "));
         caps.setCapability("os_version", config.osVersion());
 
         caps.setCapability("project", config.project());
