@@ -4,8 +4,8 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:browserstack.properties",   // локальные настройки
-        "system:properties"        // можно переопределить через -D
+        "classpath:browserstack.properties",
+        "system:properties"
 })
 public interface BrowserStackConfig extends Config{
 

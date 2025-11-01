@@ -60,7 +60,6 @@ public class WikiTests extends TestBase {
     @Test
     void verifyFullDateHeaderText() {
 
-        // Формируем строку вида "Oct 30, 2025" с текущей датой
         LocalDate today = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM d, yyyy", Locale.ENGLISH);
         String expectedDate = today.format(formatter);
@@ -96,13 +95,14 @@ public class WikiTests extends TestBase {
             SelenideElement newsFirst = $$(id("org.wikipedia.alpha:id/horizontal_scroll_list_item_text")).first();
             String text = newsFirst.text();
             newsFirst.click();
-            return text;
+            return text.replaceAll("[^\\w\\s]", "").toLowerCase();
         });
         step("Убедиться, что заголовок '" + newsText + "' открывшейся страницы включен в заголовок новостного блока", () -> {
             String newsTitle = $(id("org.wikipedia.alpha:id/view_news_fullscreen_story_text")).text();
-            //Делаем так, потому что Wiki вставляет слова типа (illustrated) в этот блок
             Assertions.assertTrue(
                     Arrays.stream(newsText.split("\\s+"))
+                            .map(word -> word.replaceAll("[^\\w]", "").toLowerCase())
+                            .filter(word -> !word.isEmpty())
                             .allMatch(word -> newsTitle.contains(word)),
                     "Не все слова из заголовка присутствуют в тексте страницы"
             );
